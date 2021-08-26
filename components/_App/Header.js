@@ -9,7 +9,7 @@ Router.onRouteChangeError = () => NProgress.done();
 
 function Header() {
   const router = useRouter();
-  const user = true;
+  const user = false;
 
   // check if the current route is equal to the pathname to set the active style on the navbar
   function isActive(route) {
