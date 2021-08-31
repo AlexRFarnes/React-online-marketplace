@@ -46,6 +46,8 @@ List of features ready and TODOs for future development
 - Authentication with JWT
 - Checkout
 - Payments with Stripe
+- Order history
+- User/Admin roles
 
 ## Status
 
