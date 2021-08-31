@@ -12,12 +12,14 @@ export default async (req, res) => {
   let products = [];
   const totalDocs = await Product.countDocuments();
   const totalPages = Math.ceil(totalDocs / pageSize);
-  console.log(totalPages);
   if (pageNum === 1) {
-    products = await Product.find().limit(pageSize);
+    products = await Product.find().sort({ name: "asc" }).limit(pageSize);
   } else {
     const skips = pageSize * (pageNum - 1);
-    products = await Product.find().skip(skips).limit(pageSize);
+    products = await Product.find()
+      .sort({ name: "asc" })
+      .skip(skips)
+      .limit(pageSize);
   }
   // const products = await Product.find();
   res.status(200).json({ products, totalPages });
